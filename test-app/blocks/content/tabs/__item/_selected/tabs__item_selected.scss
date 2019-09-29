@@ -1,0 +1,17 @@
+.tabs__item_selected {
+  color: var(--text-primary);
+  position: relative;
+
+  &::after {
+    display: block;
+    position: absolute;
+    content: '';
+
+    width: 100%;
+    height: 3px;
+    top: calc(100% - 2px);
+    left: 0;
+
+    background-color: var(--text-accent);
+  }
+}

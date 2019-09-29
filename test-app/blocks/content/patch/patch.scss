@@ -1,0 +1,135 @@
+.patch {
+  border: 1px solid #F0F2F3;
+  border-radius: 4px;
+}
+
+.patch__header {
+  background-color: #FAFBFC;
+  border-radius: 3px 3px 0 0;
+  border-bottom: 1px solid #F0F2F3;
+
+  padding: 0 16px 0 12px;
+  height: 40px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.patch__header-left {
+  display: flex;
+}
+
+.patch__header-right {
+  display: flex;
+  align-items: center;
+}
+
+.patch__sign {
+  color: #6B69C7;
+}
+
+.patch__fileIcon {
+  margin-left: 12px;
+}
+
+.patch__path {
+  margin-left: 8px;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+
+.patch__changes {
+  display: flex;
+}
+
+.patch__added {
+  color: #19BC4D;
+}
+
+.patch__removed {
+  color: #FF3029;
+  margin-left: 16px;
+}
+
+.patch__header-link {
+  margin-left: 24px;
+}
+
+.patch__body {
+  font-family: PT Mono;
+  width: 100%;
+  font-size: 12px;
+  border-collapse: collapse;
+
+  td:nth-child(1) {
+    min-width: 39px;
+    width: 1%;
+    text-align: right;
+    color: var(--text-ghost);
+    vertical-align: top;
+
+    &::before {
+      content: attr(data-line-num);
+    }
+  }
+
+  td:nth-child(2) {
+    min-width: 39px;
+    width: 1%;
+    text-align: right;
+    color: var(--text-ghost);
+    vertical-align: top;
+
+    &::before {
+      content: attr(data-line-num);
+    }
+  }
+
+  td:nth-child(3) {
+    padding-left: 28px;
+
+    pre {
+      margin: 0;
+      font-family: PT Mono;
+      white-space: pre-wrap;
+      word-break: break-word;
+    }
+  }
+}
+
+.patch__line-added {
+  background-color: #E6FFED;
+}
+
+.patch__line-removed {
+  background-color: #FFEEF0;
+}
+
+@media screen and (max-width: 1000px) {
+  .patch__header {
+    flex-wrap: wrap;
+    padding: 12px 16px 12px 12px;
+    height: auto;
+  }
+
+  .patch__header-left {
+    width: 100%;
+  }
+
+  .patch__header-right {
+    width: 100%;
+    justify-content: space-between;
+    margin-top: 5px;
+  }
+
+  .patch__body {
+    td:nth-child(1) {
+      min-width: 31px;
+    }
+
+    td:nth-child(2) {
+      min-width: 31px;
+    }
+  }
+}

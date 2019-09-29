@@ -1,0 +1,18 @@
+.breadcrumbs__item {
+  font-size: 14px;
+  line-height: 20px;
+
+  color: var(--text-secondary);
+}
+
+.breadcrumbs__item::after {
+  margin: 0 10px;
+  
+  content: '/';
+
+  display: inline-block;
+}
+
+.breadcrumbs__item:last-child::after {
+  display: none;
+}

@@ -1,0 +1,20 @@
+.i-arrow2::after {
+  content: '\e901';
+}
+
+.i-arrow2_color_primary {
+  color: var(--text-primary);
+}
+
+.i-arrow2_color_ghost {
+  color: var(--text-ghost);
+}
+
+.i-arrow2_size_m {
+  font-size: 7px;
+  line-height: 17px;
+}
+
+.i-arrow2_point_up {
+  transform: rotate(180deg);
+}

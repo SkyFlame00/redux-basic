@@ -1,0 +1,9 @@
+.footer__ui-version {
+  justify-self: flex-end;
+}
+
+@media screen and (max-width: 700px) {
+  .footer__ui-version {
+    margin-top: 10px;
+  }
+}

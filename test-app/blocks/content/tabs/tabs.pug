@@ -1,0 +1,7 @@
+mixin tabs(objs)
+  .tabs.tabs_border_bottom
+    each tab in objs
+      if tab.selected
+        .tabs__item.tabs__item_selected= tab.title
+      else
+        .tabs__item= tab.title

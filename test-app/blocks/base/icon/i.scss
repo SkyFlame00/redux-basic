@@ -1,0 +1,13 @@
+$font-family: 'icons';
+
+@font-face {
+  font-family: $font-family;
+  src: url(fonts/icons.ttf);
+}
+
+.i {
+  font-family: $font-family;
+  font-style: normal;
+
+  display: inline-block;
+}

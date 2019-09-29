@@ -1,0 +1,11 @@
+.i-code::after {
+  content: '\e905';
+}
+
+.i-code_color_primary {
+  color: var(--text-secondary);
+}
+
+.i-code_size_m {
+  font-size: 14px;
+}

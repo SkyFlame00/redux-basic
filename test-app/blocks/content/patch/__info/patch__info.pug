@@ -1,0 +1,13 @@
+mixin patchInfo(position='')
+  .patch__info(class=position)
+    .patch__info-changes
+      pre @@ -270, 160  +270, 161 @@
+    .patch__info-navigate
+      .patch__below
+        .patch__below-icon
+          i.i.i-arrow2.i-arrow2_color_ghost.i-arrow2_size_m
+        .patch__below-text Below 20 lines
+      .patch__above
+        .patch__above-icon
+          i.i.i-arrow2.i-arrow2_color_primary.i-arrow2_size_m.i-arrow2_point_up
+        .patch__above-text Above 20 lines

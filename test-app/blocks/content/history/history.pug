@@ -1,0 +1,23 @@
+mixin history(days)
+  .history
+    each day in days
+      .history__day-item
+        .history__day-item-title= day.title
+        .history__day-item-content
+          each item in day.items
+            .history__item
+              .history__pic-container
+                .history__pic
+                  .history__pic-pic
+              .history__item-content
+                .history__item-top
+                  .history__item-title
+                    b= item.title
+                  .history__item-top-right
+                    .history__item-hash-top !{item.hash}
+                    .history__item-code-icon
+                      i.i.i-code.i-code_color_primary.i-code_size_m
+                .history__item-description= item.description
+                .history__item-bottom
+                  span.history__item-hash !{item.hash}
+                  span.history__item-authordate !{item.authordate}

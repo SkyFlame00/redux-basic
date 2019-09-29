@@ -1,0 +1,11 @@
+.header-menu__item_selected .header-menu__text::after {
+  width: 100%;
+  height: 3px;
+  top: calc(100% - 2px);
+  left: 0;
+  position: absolute;
+
+  content: '';
+
+  background-color: var(--text-accent);
+}

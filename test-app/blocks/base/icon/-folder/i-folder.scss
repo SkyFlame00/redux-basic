@@ -1,0 +1,11 @@
+.i-folder::after {
+  content: '\e908';
+}
+
+.i-folder_color_primary {
+  color: var(--text-primary);
+}
+
+.i-folder_size_xs {
+  font-size: 12px;
+}

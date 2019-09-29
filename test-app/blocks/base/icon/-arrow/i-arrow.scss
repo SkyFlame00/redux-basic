@@ -1,0 +1,47 @@
+.i-arrow::after {
+  content: '\e902';
+}
+
+.i-arrow_color_primary {
+  color: var(--text-primary);
+}
+
+.i-arrow_color_secondary {
+  color: var(--text-secondary);
+}
+
+.i-arrow_color_ghost {
+  color: var(--text-ghost);
+}
+
+.i-arrow_color_light {
+  color: #E5E5E5;
+}
+
+.i-arrow_size_xs {
+  font-size: 12px;
+  line-height: 13px;
+}
+
+.i-arrow_size_s {
+  font-size: 13px;
+  line-height: 13px;
+}
+
+.i-arrow_size_m {
+  font-size: 14px;
+  line-height: 28px;
+}
+
+.i-arrow_size_l {
+  font-size: 20px;
+  line-height: 28px;
+}
+
+.i-arrow_point_right {
+  transform: rotate(-90deg);
+}
+
+.i-arrow_point_left {
+  transform: rotate(90deg);
+}

@@ -1,0 +1,26 @@
+{
+  "name": "redux",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "init": "npm i '../redux-basic'",
+    "build": "gulp build"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "gulp-sourcemaps": "^2.6.5",
+    "redux-basic": "file:../redux-basic"
+  },
+  "devDependencies": {
+    "browserify": "^16.5.0",
+    "gulp": "^4.0.2",
+    "gulp-concat": "^2.6.1",
+    "gulp-flatten": "^0.4.0",
+    "gulp-sass": "^4.0.2",
+    "vinyl-buffer": "^1.0.1",
+    "vinyl-source-stream": "^2.0.0"
+  }
+}

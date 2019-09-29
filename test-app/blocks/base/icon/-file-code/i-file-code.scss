@@ -1,0 +1,23 @@
+.i-file-code::after {
+  content: '\e906';
+}
+
+.i-file-code_color_primary {
+  color: var(--text-primary);
+}
+
+.i-file-code_color_ghost {
+  color: var(--text-ghost);
+}
+
+.i-file-code_size_xs {
+  font-size: 12px;
+}
+
+.i-file-code_size_s {
+  font-size: 13px;
+}
+
+.i-file-code_size_m {
+  font-size: 14px;
+}

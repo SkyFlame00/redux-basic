@@ -1,0 +1,11 @@
+.i-file::after {
+  content: '\e907';
+}
+
+.i-file_color_primary {
+  color: var(--text-primary);
+}
+
+.i-file_size_xs {
+  font-size: 12px;
+}

@@ -1,0 +1,20 @@
+.show-files {
+  background-color: #E6E6E6;
+  color: var(--text-primary);
+
+  padding: 4px 12px;
+
+  display: flex;
+  align-items: center;
+
+  border-radius: 4px;
+}
+
+.show-files__text {
+  font-size: 13px;
+  line-height: 15px;
+
+  margin-left: 6px;
+
+  white-space: nowrap;
+}

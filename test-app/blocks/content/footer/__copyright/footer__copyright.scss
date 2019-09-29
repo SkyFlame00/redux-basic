@@ -1,0 +1,11 @@
+.footer__copyright {
+  justify-self: flex-end;
+  margin-left: 32px;
+}
+
+@media screen and (max-width: 700px) {
+  .footer__copyright {
+    margin-top: 10px;
+    margin-left: 0;
+  }
+}

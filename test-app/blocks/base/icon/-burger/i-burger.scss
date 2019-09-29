@@ -1,0 +1,11 @@
+.i-burger::after {
+  content: '\e904';
+}
+
+.i-burger_color_primary {
+  color: var(--text-primary);
+}
+
+.i-burger_size_m {
+  font-size: 12px;
+}

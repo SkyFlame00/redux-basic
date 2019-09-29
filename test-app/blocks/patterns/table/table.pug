@@ -1,0 +1,14 @@
+mixin table(tableClass, headTDs, bodyTRs)
+  table.table(class=tableClass)
+    thead.table__head
+      tr
+        each headTD in headTDs
+          th !{headTD}
+    tbody.table__body
+      each bodyTR in bodyTRs
+        tr
+          each bodyTD in bodyTR
+            td !{bodyTD}
+          td
+            i.i.i-arrow3.i-arrow3_size_l.i-arrow3_color_light
+    

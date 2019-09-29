@@ -1,0 +1,17 @@
+mixin details(obj)
+  .details
+    .details__header
+      .details__header-left
+        .details__ext-icon !{obj.extIcon}
+        span.details__filename= obj.filename
+        span.details__bytes= obj.bytes
+      .details__header-right
+        a.details__download(href='#')
+          i.i.i-download.i-download_color_primary.i-download_size_m
+    table.details__body
+      tbody
+        each line, index in obj.lines
+          tr
+            td(data-line-num=(index + 1))
+            td(class=obj.lang)
+              pre !{line}

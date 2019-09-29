@@ -1,0 +1,8 @@
+mixin header
+  .layout.layout_border_bottom
+    .layout__container
+      .header
+        a.logo(href="#").header__logo
+          include logo.svg
+        if block
+          block

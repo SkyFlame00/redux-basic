@@ -1,0 +1,12 @@
+.i-branch::after {
+  content: '\e903';
+}
+
+.i-branch_color_primary {
+  color: var(--text-primary);
+}
+
+.i-branch_size_m {
+  font-size: 12px;
+  line-height: 20px;
+}

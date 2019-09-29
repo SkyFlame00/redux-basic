@@ -1,0 +1,42 @@
+include __info/patch__info
+
+mixin patch(opts)
+  .patch
+    .patch__header
+      .patch__header-left
+        .patch__sign M
+        .patch__fileIcon
+          i.i.i-file-code.i-file-code_size_m.i-file-code_color_ghost
+        .patch__path /trunk/arcadia/devtools/intellij/src/main/java/ru/yandex/devtools/intellij/arc/client/ArcCli.java
+      .patch__header-right
+        .patch__changes
+          .patch__added +100
+          .patch__removed -81
+        a.patch__header-link
+          i.i.i-arrow-box.i-arrow-box_size_m.i-arrow-box_color_secondary
+    +patchInfo
+    table.patch__body
+      tbody
+        - var numAdded = 1, numRemoved = 1
+        each line in opts.lines
+          case line.state
+            when 'added'
+              tr.patch__line-added
+                td
+                td(data-line-num=numAdded++)
+                td(class=opts.lang)
+                  pre !{line.code}
+            when 'removed'
+              tr.patch__line-removed
+                td(data-line-num=numRemoved++)
+                td
+                td(class=opts.lang)
+                  pre !{line.code}
+            when 'same'
+            default
+              tr.patch__line-same
+                td(data-line-num=numRemoved++)
+                td(data-line-num=numAdded++)
+                td(class=opts.lang)
+                  pre !{line.code}
+    +patchInfo('patch__info_position_bottom')

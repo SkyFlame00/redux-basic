@@ -1,0 +1,12 @@
+.i-arrow-box::after {
+  content: '\e900';
+}
+
+.i-arrow-box_color_secondary {
+  color: var(--text-secondary);
+}
+
+.i-arrow-box_size_m {
+  font-size: 14px;
+  line-height: 28px;
+}
