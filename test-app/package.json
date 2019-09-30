@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "init": "npm i '../redux-basic' && npm i && npm build",
+    "init": "npm i '../redux-basic' && npm i && npm run build",
     "build": "gulp build",
     "start": "node server"
   },
