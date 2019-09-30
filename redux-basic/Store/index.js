@@ -1,8 +1,8 @@
 module.exports = class Store {
-  constructor(reducer) {
+  constructor(reducer, initialState) {
     this._reducer = reducer;
     this._listeners = [];
-    this._state = undefined;
+    this._state = initialState;
     this.dispatch({ type: '@@init' });
   }
 
@@ -24,6 +24,6 @@ module.exports = class Store {
   }
 
   _notifyListeners() {
-    this._listeners.forEach(listener => listener(this._state));
+    this._listeners.forEach(listener => listener(this.getState()));
   }
 }
