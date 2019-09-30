@@ -5,3 +5,35 @@
 
   display: flex;
 }
+
+.header-menu__item {
+  position: relative;
+}
+
+.header-menu__dropdown {
+  min-width: 266px;
+  box-sizing: border-box;
+  position: absolute;
+  top: calc(100% + 1px);
+  left: 0;
+  width: 200px;
+  padding: 10px 0;
+  box-shadow: 0px 4px 16px rgba(53, 73, 93, 0.2);
+  display: none;
+  background: white;
+
+  li {
+    list-style-type: none;
+
+    a {
+      display: block;
+      padding: 8px 22px;
+      box-sizing: border-box;
+      color: var(--text-primary);
+    }
+  }
+}
+
+.header-menu__dropdown_visible {
+  display: block;
+}

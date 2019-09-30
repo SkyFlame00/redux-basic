@@ -4,14 +4,15 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "init": "npm i '../redux-basic'",
-    "build": "gulp build"
+    "init": "npm i '../redux-basic' && npm i && npm build",
+    "build": "gulp build",
+    "start": "node server"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "gulp-sourcemaps": "^2.6.5",
+    "express": "^4.17.1",
     "redux-basic": "file:../redux-basic"
   },
   "devDependencies": {

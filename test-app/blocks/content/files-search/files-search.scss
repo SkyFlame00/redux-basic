@@ -1,0 +1,11 @@
+.files-search__search {
+  padding: 4px 10px;
+  border: 1px solid var(--border-primary);
+  border-radius: 4px;
+  outline: none;
+  transition: .2s linear;
+
+  &:focus {
+    border-color: #ffcc00;
+  }
+}

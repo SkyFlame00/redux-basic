@@ -1,6 +1,7 @@
+const View = require('../View');
 const { applyFilterAction } = require('../../actionTypes');
 
-module.exports = class SearchView {
+module.exports = class SearchView extends View {
   constructor(el, store) {
     super(el, store);
     this._prepareRender();
@@ -11,7 +12,6 @@ module.exports = class SearchView {
     return `
       <div class="files-search">
         <input class="files-search__search" value="" />
-        <button class="files-search__btn">x</button>
       </div>
     `;
   }

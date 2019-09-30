@@ -1,76 +1,59 @@
+function init() {
+  const { Store, combineReducers } = require('redux-basic');
+  const HeaderMenuView = require('./views/HeaderMenuView');
+  const SearchView = require('./views/SearchView');
+  const FilesView = require('./views/FilesView');
+  const PageTopView = require('./views/PageTopView');
+  const { setReposAction, renderFilesAction } = require('./actionTypes')
+  const { repos, filesPage } = require('./reducers');
+
+  const reducer = combineReducers({
+    filesPage,
+    repos
+  });
+
+  const initialState = {
+    repos: [],
+    filesPage: {
+      repo: '',
+      files: []
+    }
+  };
+
+  const store = new Store(reducer, initialState);
+
+  const headerItemsContainer = document.body.querySelector('.header-items-container');
+  const filesSearchWrapper = document.body.querySelectorAll('.files-actions__col')[1];
+  const tableBody = document.body.querySelector('.table-files__body');
+  const pageTop = document.body.querySelector('.page-top');
+
+  const headerMenuView = new HeaderMenuView(headerItemsContainer, store);
+  const searchView = new SearchView(filesSearchWrapper, store);
+  const filesView = new FilesView(tableBody, store);
+  const pageTopView = new PageTopView(pageTop, store);
+
+  let repoName;
+
+  fetch('http://localhost:8080/api/repos/')
+    .then(res => res.json())
+    .then(repos => {
+      repoName = repos[0];
+      store.dispatch(setReposAction(repos));
+      return fetch('http://localhost:8080/api/repos/' + repos[0]);
+    })
+    .then(res => res.json())
+    .then(rawFiles => {
+      const files = rawFiles.map(file => ({
+        rawName: file,
+        outputName: file,
+        isVisible: true
+      }));
+      store.dispatch(renderFilesAction(files, repoName));
+    });
+}
+
 document.addEventListener('DOMContentLoaded', () => {
 
-const { Store, combineReducers } = require('redux-basic');
-const SearchView = require('./views/SearchView');
-const FilesView = require('./views/FilesView');
-const Types = require('./Types');
-
-function init(store, action) {
-  switch(action.type) {
-    case Types["@@init"]:
-    default:
-      break;
-  }
-}
-
-function files(store, action) {
-  switch(action.type) {
-    case Types.APPLY_FILTER:
-      if (action.filterValue !== '') {
-        return store.map(file => {
-          // escape взял из Интернета, чтобы время не тратить :)
-          const escape = string => string.replace(/[-\/\\^$*+?.()|[\]{}]/g, '\\$&');
-          const re = new RegExp(escape(action.filterValue), 'gi');
-          return re.test(file.rawName) ?
-            ({
-              ...file,
-              isVisible: true,
-              outputName: file.rawName.replace(re, str => `<span class="text_highlight_yellow">${str}</span>`)
-            }) :
-            ({
-              ...file,
-              isVisible: false,
-              outputName: file.rawName
-            });
-        });
-      }
-    default:
-      return store.map(file => ({
-        ...file,
-        isVisible: true,
-        outputName: file.rawName
-      }));
-  }
-}
-
-const reducer = combineReducers({
-  init,
-  files
-});
-
-const initialState = {
-  files: [
-    {
-      rawName: 'README.md',
-      outputName: 'README.md'
-    },
-    {
-      rawName: 'app.js',
-      outputName: 'app.js'
-    },
-    {
-      rawName: 'package.json',
-      outputName: 'package.json'
-    }
-  ]
-};
-
-const store = new Store(reducer, initialState);
-
-const filesSearchWrapper = document.body.querySelectorAll('.files-actions__col')[1];
-const tableBody = document.body.querySelector('.table-files__body');
-
-const searchView = new SearchView(filesSearchWrapper, store);
-const filesView = new FilesView(tableBody, store);
+  init();
 
 });
